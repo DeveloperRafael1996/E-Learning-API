@@ -13,7 +13,6 @@ const getCourses = async (req: Request, res: Response) => {
     }
 }
 
-
 const updateCourse= async (req: Request, res: Response) => {
     try {
         const { id, name, description, previousCourseId } = req.body;
@@ -76,7 +75,5 @@ const postCourse = async (req: Request, res: Response) => {
         handleHttp(res, 'ERROR_POST_COURSE')
     }
 }
-
-
 
 export { getCourses, postCourse, updateCourse }

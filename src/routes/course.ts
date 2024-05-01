@@ -11,5 +11,4 @@ router.get('/', getCourses)
 router.post('/', postCourse)
 router.put('/', updateCourse)
 
-
 export { router }

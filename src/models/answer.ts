@@ -4,6 +4,7 @@ export interface Answer extends Document {
     text: string;
     type: string;
     lession_id?: string;
+    score: number;
     answers: [{
        text: { type: String, required: true },
        correct: { type: Boolean, required: true }
@@ -20,6 +21,9 @@ const ItemSchema  = new Schema<Answer> (
         },
         lession_id: {
             type: String
+        },
+        score: {
+            type: Number
         },
         answers: [{
             text: { type: String, required: true },

@@ -6,12 +6,13 @@ import { QuestionModel } from '../models/answer';
 const postAnswer = async (req: Request, res: Response) => {
     
     try {
-        const { text, type, lession_id, answers } = req.body;
+        const { text, type, lession_id, score , answers } = req.body;
 
         const newAnswer = new QuestionModel({
             text,
             type,
             lession_id,
+            score,
             answers
         });
 

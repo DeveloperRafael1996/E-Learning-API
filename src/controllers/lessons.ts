@@ -3,8 +3,6 @@ import { handleHttp } from "../utils/error.handle"
 import { LessonModel } from '../models/lesson';
 import mongoose from 'mongoose';
 
-
-
 const getLessons= async (req: Request, res: Response) => {
     try {
         const response = await LessonModel.find();
@@ -73,7 +71,5 @@ const postLessons= async (req: Request, res: Response) => {
         handleHttp(res, 'ERROR_POST_LESSON')
     }
 }
-
-
 
 export { getLessons, postLessons, updateLessons }

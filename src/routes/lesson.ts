@@ -11,5 +11,4 @@ router.get('/', getLessons)
 router.post('/', postLessons)
 router.put('/', updateLessons)
 
-
 export { router }
