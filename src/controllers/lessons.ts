@@ -14,15 +14,6 @@ const getLessons= async (req: Request, res: Response) => {
     }
 } 
 
-const getLesson= (req: Request, res: Response) => {
-    try {
-        
-    } catch (e) {
-        handleHttp(res, 'ERROR_GET_LESSON')
-    }
-    
-}
-
 const updateLessons= async (req: Request, res: Response) => {
     try {
         const { id, name, description, previousLessonId, course_id } = req.body;
@@ -83,13 +74,6 @@ const postLessons= async (req: Request, res: Response) => {
     }
 }
 
-const deleteLessons= (req: Request, res: Response) => {
-    try {
-        
-    } catch (e) {
-        handleHttp(res, 'ERROR_DELETE_LESSON')
-    }
-}
 
 
-export { getLesson, getLessons, postLessons, updateLessons, deleteLessons}
+export { getLessons, postLessons, updateLessons }

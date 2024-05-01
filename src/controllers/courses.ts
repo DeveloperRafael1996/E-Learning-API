@@ -13,14 +13,6 @@ const getCourses = async (req: Request, res: Response) => {
     }
 }
 
-const getCourse = (req: Request, res: Response) => {
-    try {
-        
-    } catch (e) {
-        handleHttp(res, 'ERROR_GET_ITEM')
-    }
-    
-}
 
 const updateCourse= async (req: Request, res: Response) => {
     try {
@@ -85,13 +77,6 @@ const postCourse = async (req: Request, res: Response) => {
     }
 }
 
-const deleteCourse = (req: Request, res: Response) => {
-    try {
-        
-    } catch (e) {
-        handleHttp(res, 'ERROR_DELETE_COURSE')
-    }
-}
 
 
-export { getCourse, getCourses, postCourse, updateCourse, deleteCourse}
+export { getCourses, postCourse, updateCourse }
