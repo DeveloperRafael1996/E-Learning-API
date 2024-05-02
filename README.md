@@ -5,9 +5,15 @@ Este proyecto implementa una API RESTful para gestionar cursos,studiantes,leccio
 ## Instalación
 
 1. Clona este repositorio en tu máquina local:
-2. Instala las dependencias del proyecto npm install:
-3. Correr npm run dev
-4. Correr Docker para levantar MongoDB composer up -d
+2. Instala las dependencias del proyecto ejecutando el siguiente comando en tu terminal:
+
+```bash
+npm install
+npm run dev
+docker-compose up -d
+PORT=8050
+DB_URI=mongodb://localhost:3002/learning
+
 
 ```json
 {
