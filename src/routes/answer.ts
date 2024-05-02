@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { postAnswer, getAnswerByLessionId } from "../controllers/answers"
+import { postAnswer, getAnswerByLessionId, postAnswerByStudent } from "../controllers/answers"
 const router = Router()
 
 
@@ -9,8 +9,7 @@ const router = Router()
 
 router.post('/', postAnswer)
 router.get('/:lession_id', getAnswerByLessionId)
-
-
+router.post('/process/student', postAnswerByStudent)
 
 
 export { router }
