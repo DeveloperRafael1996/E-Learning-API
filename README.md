@@ -19,6 +19,12 @@ PORT=8050
 DB_URI=mongodb://localhost:3002/learning
 ```
 
+4. Preferecia
+    se uso nodejs con ts para la creacion de enpoints usando como gestor de base de datos nosql, use este framework ya que el uso de la creacion de APIS es 
+    asincrónica y su capacidad para manejar grandes cantidades de solicitudes concurrentes.
+    Las bases de datos NoSQL, como MongoDB que es lo que implemente, también son conocidas por su capacidad de escalabilidad horizontal, lo que las hace adecuadas para aplicaciones que necesitan crecer rápidamente.
+
+
 5. Postamn
 ```json
 {
@@ -451,4 +457,3 @@ DB_URI=mongodb://localhost:3002/learning
 		}
 	]
 }
-
