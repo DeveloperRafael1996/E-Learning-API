@@ -59,6 +59,7 @@ const postAnswerByStudent = async (req: Request, res: Response) => {
             if(answerAPI){
                 const rptCorrect = answerAPI.answers.filter(rpt => rpt.correct);
                 const rptSendCoorect = pregSend.answers.filter(rptSend => rptSend.response);
+                //Opción Múltiple 1 Respuesta
 
                 if (rptCorrect.length >= 1 && rptSendCoorect.length >= 1) {
                     const rptCoindice = rptCorrect.filter(respuestaCorrecta =>

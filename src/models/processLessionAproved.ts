@@ -1,21 +1,17 @@
 import { Schema, model } from "mongoose";
 
-export interface ProcessLession extends Document {
+export interface ProcessLessionAproved extends Document {
     lession_id: string;
     student_id?: string;
-    type: string;
     score: number
 }
 
-const ItemSchema  = new Schema<ProcessLession> (
+const ItemSchema  = new Schema<ProcessLessionAproved> (
     {
         lession_id: {
             type: String
         },
         student_id: {
-            type: String
-        },
-        type: {
             type: String
         },
         score: {
@@ -28,5 +24,5 @@ const ItemSchema  = new Schema<ProcessLession> (
     }
 )
 
-export const ProcessLessionModel = model<ProcessLession>("processLessions", ItemSchema)
+export const ProcessLessionAprovedModel = model<ProcessLessionAproved>("processLessionAproveds", ItemSchema)
                                                                                                                                                                        
