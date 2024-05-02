@@ -8,7 +8,7 @@ const postMatriculation = async (req: Request, res: Response) => {
     try {
         const { course_id, student_id  } = req.body;
 
-        const course = await MatriculationModel.findOne({course_id})
+        const course = await MatriculationModel.findOne({course_id, student_id})
         if(course){
             return res.status(200).json({ data: { error: 'Curso ya esta Matriculado' }});
         }

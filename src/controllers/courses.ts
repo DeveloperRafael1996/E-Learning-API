@@ -1,7 +1,8 @@
 import { Request, Response } from "express"
 import { handleHttp } from "../utils/error.handle"
-import { CourceModel } from '../models/course';
+import { CourceModel, Course } from '../models/course';
 import mongoose from 'mongoose';
+import { MatriculationModel } from "../models/matriculation";
 
 
 const getCourses = async (req: Request, res: Response) => {
@@ -76,4 +77,28 @@ const postCourse = async (req: Request, res: Response) => {
     }
 }
 
-export { getCourses, postCourse, updateCourse }
+
+const getCourseByStudent= async (req: Request, res: Response) => {
+    try {
+
+        const { student_id } = req.body;
+        const respMatricula = await MatriculationModel.find({ student_id})
+
+
+        if(respMatricula)
+        {
+            let course = respMatricula.map(x => x.course_id);
+            const courseStudent  = await CourceModel.find({ _id: { $nin: [course] } });
+            return res.status(200).json({ data: courseStudent });
+
+
+        }
+        const couse  = await CourceModel.find()
+        return res.status(200).json({ data: couse});
+
+    } catch (e) {
+        handleHttp(res, 'ERROR_GET_LESSON')
+    }
+} 
+
+export { getCourses, postCourse, updateCourse, getCourseByStudent }

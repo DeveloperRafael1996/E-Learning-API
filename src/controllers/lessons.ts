@@ -4,6 +4,7 @@ import { LessonModel } from '../models/lesson';
 import mongoose from 'mongoose';
 import { ProcessLessionModel } from "../models/processLession";
 import { ProcessLessionAprovedModel } from "../models/processLessionAproved";
+import { MatriculationModel } from "../models/matriculation";
 
 const getLessons= async (req: Request, res: Response) => {
     try {
@@ -74,6 +75,22 @@ const postLessons= async (req: Request, res: Response) => {
     }
 }
 
+const getLessonsByStudent= async (req: Request, res: Response) => {
+    try {
+
+        const { course_id, student_id } = req.body;
+       
+        const student = await MatriculationModel.findOne({course_id, student_id})
+
+        if(student){
+            const response = await LessonModel.find({course_id});
+            return res.status(200).json({ data: response });
+        }
+       
+    } catch (e) {
+        handleHttp(res, 'ERROR_GET_LESSON')
+    }
+} 
 
 const lessionAproved = async (req: Request, res: Response) => {
     //Nota >=15
@@ -112,4 +129,4 @@ const lessionAproved = async (req: Request, res: Response) => {
     }
 }
 
-export { getLessons, postLessons, updateLessons, lessionAproved }
+export { getLessons, postLessons, updateLessons, lessionAproved, getLessonsByStudent }

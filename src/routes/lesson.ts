@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { getLessons, postLessons, updateLessons, lessionAproved } from "../controllers/lessons"
+import { getLessons, postLessons, updateLessons, lessionAproved, getLessonsByStudent } from "../controllers/lessons"
 const router = Router()
 
 
@@ -8,6 +8,7 @@ const router = Router()
 */
 
 router.get('/', getLessons)
+router.get('/course', getLessonsByStudent)
 router.post('/', postLessons)
 router.post('/', updateLessons)
 router.post('/aproved', lessionAproved)
