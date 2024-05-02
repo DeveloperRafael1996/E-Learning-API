@@ -11,10 +11,15 @@ Este proyecto implementa una API RESTful para gestionar cursos,studiantes,leccio
 npm install
 npm run dev
 docker-compose up -d
+
+```
+3. Crear el file env
+```bash
 PORT=8050
 DB_URI=mongodb://localhost:3002/learning
+```
 
-
+5. Postamn
 ```json
 {
 	"info": {
