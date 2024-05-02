@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { postAnswer } from "../controllers/answers"
+import { postAnswer, getAnswerByLessionId } from "../controllers/answers"
 const router = Router()
 
 
@@ -8,6 +8,8 @@ const router = Router()
 */
 
 router.post('/', postAnswer)
+router.get('/:lession_id', getAnswerByLessionId)
+
 
 
 

@@ -3,6 +3,17 @@ import { Request, Response } from "express"
 import { handleHttp } from "../utils/error.handle"
 import { QuestionModel } from '../models/answer';
 
+
+const getAnswerByLessionId= async (req: Request, res: Response) => {
+    try {
+        const lession_id = req.params.lession_id;
+        const response = await QuestionModel.find({lession_id});
+        return res.status(200).json({ data: response });
+    } catch (e) {
+        handleHttp(res, 'ERROR_GET_getAnswerByLessionId')
+    }
+} 
+
 const postAnswer = async (req: Request, res: Response) => {
     
     try {
@@ -24,4 +35,4 @@ const postAnswer = async (req: Request, res: Response) => {
     }
 }
 
-export { postAnswer }
+export { postAnswer, getAnswerByLessionId }
